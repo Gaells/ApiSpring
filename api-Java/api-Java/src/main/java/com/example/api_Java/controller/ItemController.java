@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/items")
@@ -18,8 +19,9 @@ public class ItemController {
 
     @GetMapping
     public List<Item> getAllItems() {
-        return itemService.findAll();
+        return itemService.findAll().stream().collect(Collectors.toList());
     }
+
 
     @GetMapping("/{id}")
     public Item getItemById(@PathVariable Long id) {
