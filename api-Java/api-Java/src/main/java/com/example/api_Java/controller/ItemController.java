@@ -1,4 +1,5 @@
 package com.example.api_Java.controller;
+
 import com.example.api_Java.model.Item;
 import com.example.api_Java.service.ItemService;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,6 @@ public class ItemController {
     public List<Item> getAllItems() {
         return itemService.findAll().stream().collect(Collectors.toList());
     }
-
 
     @GetMapping("/{id}")
     public Item getItemById(@PathVariable Long id) {
