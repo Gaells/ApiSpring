@@ -1,12 +1,11 @@
 package com.example.api_Java.model;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Item {
@@ -24,7 +23,18 @@ public class Item {
     @Min(0)
     private double preco;
 
-    // aqui estão os Getters e Setters
+    // Construtor padrão explícito
+    public Item() {
+    }
+
+    // Construtor com argumentos
+    public Item(String nome, String descricao, double preco) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = preco;
+    }
+
+    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -57,4 +67,3 @@ public class Item {
         this.preco = preco;
     }
 }
-
