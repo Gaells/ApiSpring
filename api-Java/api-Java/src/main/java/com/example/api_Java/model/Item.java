@@ -23,10 +23,6 @@ public class Item {
     @Min(0)
     private double preco;
 
-    // Construtor padrão explícito
-    public Item() {
-    }
-
     // Construtor com argumentos
     public Item(String nome, String descricao, double preco) {
         this.nome = nome;
